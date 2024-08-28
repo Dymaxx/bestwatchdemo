@@ -20,11 +20,12 @@ export async function Cast({
                   <div key={index} className="flex flex-col gap-2">
                     <Image
                       className="object-cover bg-red-300"
-                      src={` https://image.tmdb.org/t/p/w500${actor.image}`}
+                      src={`https://image.tmdb.org/t/p/w500${actor.image}`}
                       width={500}
                       height={500}
                       alt={""}
-                    />
+                    ></Image>
+
                     <p className="text-lg">{actor.name}</p>
                     <p className="text-sm font-normal">{actor.character}</p>
                   </div>
