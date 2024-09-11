@@ -11,7 +11,7 @@ export function Hero() {
         <div className="px-10 pr-24  pt-16 pb-8  flex flex-col justify-between ">
           <div className="flex flex-col gap-10">
             <h1 className="text-6xl  ">
-              The <span className="font-bold">Soul Conductor</span>
+              The <span className="font-bold">Soul en Conductor</span>
             </h1>
 
             <div className="flex gap-3 items-center">
