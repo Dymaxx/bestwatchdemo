@@ -24,7 +24,7 @@ export async function selectUserByClerkId({ clerkId }: { clerkId: string }) {
   const userData = await db
     .select()
     .from(user)
-    .where(eq(user.clerkId, clerkId))
+    .where(eq(user.clerkId, "user_2lQ5oUddwrabx18Fecxsi5tVdIL"))
     .limit(1);
   return userData[0];
 }
