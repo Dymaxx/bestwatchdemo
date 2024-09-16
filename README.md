@@ -1,66 +1,49 @@
-# With Docker
+# Best.Watch
 
-This examples shows how to use Docker with Next.js based on the [deployment documentation](https://nextjs.org/docs/deployment#docker-image). Additionally, it contains instructions for deploying to Google Cloud Run. However, you can use any container-based deployment host.
+**Best.Watch** is a web application that allows you to view movies and series, receive recommendations based on genre preferences, and access data from the MovieAPI.
 
-## How to use
+## Key Features
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- **Login**: Automatic login with a demo account via Clerk.
+- **Movie Recommendations**: Get recommendations based on genres you like.
+- **MovieAPI**: Fetch data about movies and series using The Movie Database API.
 
-```bash
-npx create-next-app --example with-docker nextjs-docker
-# or
-yarn create next-app --example with-docker nextjs-docker
-# or
-pnpm create next-app --example with-docker nextjs-docker
+## Technologies and Tools
+
+- **Next.js**: Framework for server-side rendering and static site generation.
+- **TypeScript**: JavaScript with static types.
+- **Clerk.js**: For authentication and user management.
+- **Drizzle ORM**: Object-relational mapper for PostgreSQL.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **The Movie Database API**: For fetching movie and series data.
+- **SchadcnUI**: For user interface components.
+- **Docker**: For containerizing the application.
+- **PostgreSQL**: Relational database.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jouwgebruikersnaam/bestwatch.git
+2. Installeer de afhankelijkheden
+Gebruik een van de volgende commando's, afhankelijk van je voorkeur voor npm, yarn, of pnpm:
+ ```bash
+    npm install
+    # of
+    yarn install
+    # of
+    pnpm install 
 ```
 
-## Using Docker
-
-1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
-1. Build your container: `docker build -t nextjs-docker .`.
-1. Run your container: `docker run -p 3000:3000 nextjs-docker`.
-
-You can view your images created with `docker images`.
-
-### In existing projects
-
-To add support for Docker to an existing project, just copy the [`Dockerfile`](https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile) into the root of the project and add the following to the `next.config.js` file:
-
-```js
-// next.config.js
-module.exports = {
-  // ... rest of the configuration.
-  output: "standalone",
-};
+4. Start de ontwikkelserver
+Gebruik een van de volgende commando's om de ontwikkelserver te starten:
+  ```bash
+      npm run dev
+      # of
+      yarn dev
+      # of
+      pnpm dev
 ```
 
-This will build the project as a standalone app inside the Docker image.
 
-## Deploying to Google Cloud Run
 
-1. Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) so you can use `gcloud` on the command line.
-1. Run `gcloud auth login` to log in to your account.
-1. [Create a new project](https://cloud.google.com/run/docs/quickstarts/build-and-deploy) in Google Cloud Run (e.g. `nextjs-docker`). Ensure billing is turned on.
-1. Build your container image using Cloud Build: `gcloud builds submit --tag gcr.io/PROJECT-ID/helloworld --project PROJECT-ID`. This will also enable Cloud Build for your project.
-1. Deploy to Cloud Run: `gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --project PROJECT-ID --platform managed --allow-unauthenticated`. Choose a region of your choice.
-
-   - You will be prompted for the service name: press Enter to accept the default name, `helloworld`.
-   - You will be prompted for [region](https://cloud.google.com/run/docs/quickstarts/build-and-deploy#follow-cloud-run): select the region of your choice, for example `us-central1`.
-
-## Running Locally
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
